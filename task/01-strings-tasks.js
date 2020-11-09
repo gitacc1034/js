@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 /********************************************************************************************
  *                                                                                          *
@@ -40,7 +40,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    return (value.lenght);
+    return value.length
 }
 
 /**
@@ -57,8 +57,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    var hello = 'Hello, ';
-    return(hello.concat(firstName,' ',lastName));
+    return `Hello, ${firstName} ${lastName}!`
 }
 
 /**
@@ -72,8 +71,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    var hello = 'Hello, ';
-    return value.replace(hello, '');
+    return value.slice(7, value.indexOf('!'))
 }
 
 
@@ -149,7 +147,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    return(str..slice(1,-1));
+    return(str.slice(1,-1));
 }
 
 
@@ -205,9 +203,9 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    var string = ""
+    let string = ""
 
-    for(var h = 1; h <= height; h++) {
+    for(let h = 1; h <= height; h++) {
         switch (h) {
             case 1: string = string + `┌${'─'.repeat(width - 2)}┐\n` 
                 break
